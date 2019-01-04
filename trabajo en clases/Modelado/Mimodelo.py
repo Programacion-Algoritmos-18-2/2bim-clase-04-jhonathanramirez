@@ -54,3 +54,25 @@ class Equipo(object):
         """
         return "%s - %s - %d - %d" % (self.obtener_nombre(), self.obtener_ciudad(),\
                 self.obtener_campeonatos(), self.obtener_numJugadores())
+    def __repr__(self):#Muestra los datos que retorna la clase Operaciones 
+        """
+        """
+        return "%s - %s - %d - %d" % (self.obtener_nombre(), self.obtener_ciudad(),\
+                self.obtener_campeonatos(), self.obtener_numJugadores())
+class Operaciones(object):
+
+    def __init__(self, listado):
+        self.listado_e = listado
+
+    def ordenar_nombre(self):
+        """
+            https://docs.python.org/3/howto/sorting.html
+            >>> sorted(student_objects, key=lambda student: student.age)   # sort by age
+        """
+        return sorted(self.listado_e, key=lambda equipo: equipo.nombre)
+    def ordenar_campeonatos(self):
+        """
+            https://docs.python.org/3/howto/sorting.html
+            >>> sorted(student_objects, key=lambda student: student.age)   # sort by age
+        """
+        return sorted(self.listado_e, key=lambda equipo: equipo.campeonatos)
